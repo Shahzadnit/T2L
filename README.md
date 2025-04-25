@@ -39,7 +39,7 @@
 ## 👀 Qualitative Analysis: Attention Maps
 
 <p align="center">
-  <img src="attension_map.png" alt="T2L Attention Map" width="1000"/>
+  <img src="attension_map.png" alt="T2L Attention Map" width="800"/>
 </p>
 
 Above are **temporal attention maps** for various video actions, showing how **T2L learns dynamic regions** crucial for action recognition over time. These maps demonstrate the effectiveness of our **temporal token learning** strategy.
