@@ -107,21 +107,21 @@ We've verified compatibility and successful training on:
 
 
 
-## Training
+## 🏋️‍♂️ Training
 ```
 # Train
 python train.py --config configs/K-400/k400_train.yaml
 
 ```
 
-## Testing
+## 🧪 Testing
 ```
 # Test 
 python test.py --config configs/ucf101/UCF_zero_shot_testing.yaml
 
 ```
 
-## Citation
+## 📖 Citation
 If you find the code and pre-trained models useful for your research, please consider citing our paper:
 
 ```
@@ -135,8 +135,10 @@ If you find the code and pre-trained models useful for your research, please con
 ```
 
 
-# Acknowledgments
-Our code is based on [ActionCLIP](https://github.com/sallymmx/ActionCLIP?tab=readme-ov-file)
+## 🙏 Acknowledgments
+
+This repository is built upon the excellent foundation of [ActionCLIP](https://github.com/sallymmx/ActionCLIP?tab=readme-ov-file).  
+Special thanks to the open-source community for tools and datasets that made this work possible.
 
 
 
