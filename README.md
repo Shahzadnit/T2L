@@ -1,34 +1,53 @@
-# This is an official pytorch implementation of EZ-CLIP: Efficient Zero-Shot Video Action Recognition [[arXiv]](https://arxiv.org/abs/2312.08010)
+# T2L: Efficient Zero-Shot Action Recognition with Temporal Token Learning
 
-## Updates
- - Trained model download link of [google driver](https://drive.google.com/drive/folders/1OPt5cXSx-1u_hRXSpst94gMJ5P-c7uBS?usp=sharing).
+![Teaser Figure](T2L.jpg)
 
+> **T2L** is an efficient and scalable adaptation of CLIP for zero-shot video action recognition. It introduces **Temporal Token Learning (TTL)** and a novel **Temporal Feature Diversity (TFD)** loss to capture motion without modifying the frozen CLIP backbone. With only 5.2M tunable parameters, T2L achieves state-of-the-art performance on multiple benchmarks while maintaining high throughput and low computational cost.
 
-## Overview
+---
 
-![T2L](T2L.jpg)
+## 🔍 Overview
 
+Recent vision-language models such as CLIP exhibit powerful generalization capabilities in zero-shot image classification. However, extending such models to videos introduces challenges related to temporal modeling and computational complexity. 
 
+**T2L** addresses these challenges by introducing a lightweight **Temporal Token Learning (TTL)** module, along with a **Temporal Feature Diversity (TFD)** loss that enhances motion representation. This design enables T2L to:
 
-# Introduction
-In this study, we present EZ-CLIP, a simple and efficient adaptation of CLIP that
-addresses these challenges. EZ-CLIP leverages temporal visual prompting for
-seamless temporal adaptation, requiring no fundamental alterations to the core
-CLIP architecture while preserving its remarkable generalization abilities. Moreover, we introduce a novel learning objective that guides the temporal visual
-prompts to focus on capturing motion, thereby enhancing its learning capabilities from video data.
+- Efficiently model motion across frames with **frozen CLIP** encoders.
+- Scale to real-world video benchmarks like UCF-101, HMDB-51, and SSv2.
+- Outperform prior video-CLIP adaptations in both accuracy and throughput.
 
+---
 
-## Content 
+![Main Architecture](Screenshot from 2025-04-25 10-13-24.png)
+
+---
+
+## 🆕 Updates
+
+- 🧠 Accepted at **TMLR 2025**
+- 📦 Pretrained models available: [Google Drive](https://drive.google.com/drive/folders/1OPt5cXSx-1u_hRXSpst94gMJ5P-c7uBS?usp=sharing)
+
+---
+
+## 📦 Contents
+
 - [Prerequisites](#prerequisites)
-- [Model Zoo](#ModelZoo)
+- [Model Zoo](#model-zoo)
 - [Data Preparation](#data-preparation)
 - [Training](#training)
 - [Testing](#testing)
-- [Acknowledgments](#Acknowledgments)
+- [Citation](#citation)
+- [Acknowledgments](#acknowledgments)
 
-## Prerequisites
+---
 
-We provide the conda requirements.txt to help you install these libraries. You can initialize environment by using `pip install -r requirements.txt`.
+## 📋 Prerequisites
+
+Install dependencies using:
+
+```bash
+pip install -r requirements.txt
+
 
 
 
