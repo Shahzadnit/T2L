@@ -129,10 +129,10 @@ Models are trained on base classes and evaluated on both base and novel classes.
 Pre-extract video frames for efficient training and evaluation using scripts in `Dataset_creation_scripts`.
 
 **Supported Datasets:**
-- [Kinetics-400/600](https://deepmind.com/research/open-source/open-source-datasets/kinetics/)
-- [UCF-101](http://crcv.ucf.edu/data/UCF101.php)
-- [HMDB-51](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/)
-- [Something-Something-v2](https://developer.qualcomm.com/software/something-something-video-dataset)
+- 🎞️ [Kinetics-400/600](https://deepmind.com/research/open-source/open-source-datasets/kinetics/)
+- 📺 [UCF-101](http://crcv.ucf.edu/data/UCF101.php)
+- 🎬 [HMDB-51](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/)
+- 🎬 [Something-Something-v2](https://developer.qualcomm.com/software/something-something-video-dataset)
 
 **Steps:**
 1. Download datasets from their official websites.
