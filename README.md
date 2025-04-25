@@ -113,11 +113,12 @@ python test.py --config configs/ucf101/UCF_zero_shot_testing.yaml
 If you find the code and pre-trained models useful for your research, please consider citing our paper:
 
 ```
-@article{ez2022clip,
-  title={EZ-CLIP: Efficient Zeroshot Video Action Recognition},
-  author={Shahzad Ahmad, Sukalpa Chanda, Yogesh S Rawat},
-  journal={arXiv preprint arXiv:2312.08010},
-  year={2024}
+@article{ahmad2025t2l,
+  title={T2L: Efficient Zero-Shot Action Recognition with Temporal Token Learning},
+  author={Ahmad, Shahzad and Chanda, Sukalpa and Rawat, Yogesh S},
+  journal={Transactions on Machine Learning Research (TMLR)},
+  year={2025},
+  url={https://openreview.net/forum?id=WvgoxpGpuU}
 }
 ```
 
