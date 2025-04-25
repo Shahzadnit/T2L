@@ -6,7 +6,7 @@
 
 ## Overview
 
-![EZ-CLIP](EZ-CLIP.png)
+![T2L](Figure_main.pdf)
 
 
 
