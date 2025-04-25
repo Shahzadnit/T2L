@@ -65,31 +65,43 @@ Published in Transactions on Machine Learning Research (TMLR), April 2025
 We provide the conda requirements.txt to help you install these libraries. You can initialize environment by using `pip install -r requirements.txt`.
 
 
-## Model Zoo
-NOTE: All models in our experiments below uses publicly available ViT/B-16 based CLIP model.
+## 🧪 Model Zoo
 
-### Zero-shot results
-All models are trained on Kinetics-400 and then evaluated directly on downstream datasets.
+> 📝 All experiments utilize the publicly available **CLIP ViT/B-16** as the base visual encoder.
 
-| Model                                                           | Input  | HMDB-51 | UCF-101 | Kinetics-600 |                                                                    Model                                                                     |
-|---------------------------------------------------------------------------|:------:|:-------:|:-------:|:------------:|:--------------------------------------------------------------------------------------------------------------------------------------------:|
-| T2L(ViT-16) | 8x224 |  52.9   |  79.1   |     70.1     |  [link](https://drive.google.com/file/d/19QNGgaZjPyq0yz7XJGFccS7MV09KMY_K/view?usp=drive_link)  |
+### 🔍 Zero-Shot Evaluation
 
+All models below are trained on **Kinetics-400** and directly evaluated on downstream datasets without any fine-tuning.
 
-### Base-to-novel generalization results
-Here, we divide each dataset into base and novel classes.
-All models are trained on base classes and evaluated on both base and novel classes.
+| **Model**      | **Input** | **HMDB-51** | **UCF-101** | **Kinetics-600** | **Model Download** |
+|----------------|:---------:|:-----------:|:-----------:|:----------------:|:-------------------:|
+| **T2L (ViT-16)** | 8×224     | **52.9**     | **79.1**     | **70.1**           | [📥 Link](https://drive.google.com/file/d/19QNGgaZjPyq0yz7XJGFccS7MV09KMY_K/view?usp=drive_link) |
 
-| Dataset                                                | Input  | Base Acc. | Novel Acc. |  HM  |                                                                                                                                                                                                                   Model                                                                                                                                                                                                                   |
-|----------------------------------------------------------------|:------:|:---------:|:----------:|:----:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| K-400 | 8x224 |  73.1 | 60.6 | 66.3| [link](https://drive.google.com/file/d/1q8rBkL0QKNTeJJihWkNUwm1eAGH_OY0U/view?usp=sharing) |
-| HMDB-51 | 8x224 | 77.0 | 58.2  |66.3 | [link](https://drive.google.com/file/d/1hW2i6agAhpyFvoRgPcOki3coQHx-6oWN/view?usp=sharing) |
-| UCF-101 | 8x224 |    94.4 | 77.9 | 85.4 | [link](https://drive.google.com/file/d/16HTxwbqfi1N8BPVjfrvL6F_A4xLNt-zc/view?usp=sharing) |
-| SSV2 | 8x224 |     16.6 | 13.3 | 14.8 | [Link](https://drive.google.com/file/d/1EtpET-s634JnHK7n57vrvqNpE7qH_dHq/view?usp=sharing) |
+---
 
-## Data Preparation
-We need to first extract videos into frames for fast reading. Please refer 'Dataset_creation_scripts' data pre-processing.
-We have successfully trained on [Kinetics](https://deepmind.com/research/open-source/open-source-datasets/kinetics/), [UCF101](http://crcv.ucf.edu/data/UCF101.php), [HMDB51](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/),
+### 🔀 Base-to-Novel Generalization
+
+In this setting, each dataset is split into **base** and **novel** classes. The model is trained only on base classes and evaluated on both.
+
+| **Dataset** | **Input** | **Base Acc.** | **Novel Acc.** | **Harmonic Mean (HM)** | **Model Download** |
+|-------------|:---------:|:-------------:|:---------------:|:-----------------------:|:-------------------:|
+| **Kinetics-400** | 8×224 | 73.1 | 60.6 | **66.3** | [📥 Link](https://drive.google.com/file/d/1q8rBkL0QKNTeJJihWkNUwm1eAGH_OY0U/view?usp=sharing) |
+| **HMDB-51**      | 8×224 | 77.0 | 58.2 | **66.3** | [📥 Link](https://drive.google.com/file/d/1hW2i6agAhpyFvoRgPcOki3coQHx-6oWN/view?usp=sharing) |
+| **UCF-101**      | 8×224 | 94.4 | 77.9 | **85.4** | [📥 Link](https://drive.google.com/file/d/16HTxwbqfi1N8BPVjfrvL6F_A4xLNt-zc/view?usp=sharing) |
+| **SSV2**         | 8×224 | 16.6 | 13.3 | **14.8** | [📥 Link](https://drive.google.com/file/d/1EtpET-s634JnHK7n57vrvqNpE7qH_dHq/view?usp=sharing) |
+
+---
+
+## 🗂️ Data Preparation
+
+To enable fast training and evaluation, we recommend pre-extracting video frames using our scripts in `Dataset_creation_scripts`.
+
+We've verified compatibility and successful training on:
+- 🎞️ [Kinetics](https://deepmind.com/research/open-source/open-source-datasets/kinetics/)
+- 📺 [UCF101](http://crcv.ucf.edu/data/UCF101.php)
+- 🎬 [HMDB51](http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/)
+
+---
 
 
 
