@@ -1,0 +1,43 @@
+pretrain: ''
+seed: 1024
+weight_save_dir: 'Exp'
+use_motion_loss: True
+training_name: 'Zero_shot_hmdb_testing'
+T_Adapter: False
+prompt:
+    use: True
+    # num_of_token: 100 #197
+    # num_of_text_token: 50   #77
+    INITIATION: 'random' 
+    DEEP: True
+    DROPOUT: 0.1
+data:
+    dataset: hmdb
+    modality: RGB
+    num_segments: 8
+    seg_length: 1
+    split: 1
+    batch_size: 1
+    workers: 4
+    # num_classes: 400
+    use_llm: True
+    image_tmpl: 'img_{:05d}.jpg'
+    val_list: '/cluster/datastore/shahzaa/Txts/HMDB_51_txt/test.txt' #
+    gpt_discription: '/cluster/datastore/shahzaa/Code/prompt_work/ActionCLIP/GPT_discription/HMDB_gpt_Class_discription_new.csv'
+    label_list: '/cluster/datastore/shahzaa/Code/prompt_work/ActionCLIP/lists/hmdb51_labels.csv'
+    index_bias: 1
+    input_size: 224
+    random_shift: False
+network:
+    arch: ViT-B/16 #ViT-B/32 ViT-B/16  ViT-L/14
+    init: True
+    tsm: False
+    drop_out: 0.1
+    emb_dropout: 0.0 
+    type: clip_k400
+    sim_header: "Transf"  #Transf   meanP  LSTM Conv_1D Transf_cls
+    joint: False
+    describe:
+logging:
+    print_freq: 10
+    eval_freq: 1

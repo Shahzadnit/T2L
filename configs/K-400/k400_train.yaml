@@ -1,0 +1,81 @@
+resume: #'/cluster/datastore/shahzaa/EZ-CLIP/Exp/clip_k400/ViT-L/14/kinetics400/base_to_novel_k400_ViT-14_s3/Best_epoch_6_model.pt'
+pretrain: 
+seed: 1024
+weight_save_dir: 'Exp_T_Adapter'
+use_motion_loss: True
+training_name: 'Zero_shot_K_400_vit_16_T_adaptor_8_frame'
+T_Adapter: False
+prompt:
+    use: True
+    # num_of_token: 100 #197
+    # num_of_text_token: 50   #77
+    INITIATION: 'random' 
+    DEEP: True
+    DROPOUT: 0.1
+data:
+    dataset: kinetics400
+    modality: RGB
+    num_segments: 8
+    seg_length: 1
+    batch_size:  80
+    workers: 16
+    # num_classes: 400
+    image_tmpl: 'img_{:05d}.jpg'
+    use_llm: True
+    train_list: '/media/datastore/shahzad/Code/ActionCLIP/kinetic_400_txt/train.txt'
+    val_list: '/media/datastore/shahzad/Code/ActionCLIP/kinetic_400_txt/val.txt' #
+    gpt_discription: '/cluster/datastore/shahzaa/Code/prompt_work/ActionCLIP/GPT_discription/Kinetic_400_gpt_Class_discription_new.csv'
+    label_list: '/cluster/datastore/shahzaa/Code/prompt_work/ActionCLIP/lists/kinetics_400_labels.csv'
+    ############ UCF Val detail  #######
+    ucf_val_list: '/cluster/datastore/shahzaa/Txts/UCF_101_txt/test.txt' #
+    ucf_gpt_discription: '/cluster/datastore/shahzaa/Code/prompt_work/ActionCLIP/GPT_discription/UCF_101_gpt_Class_discription_new.csv'
+    ucf_label_list: '/cluster/datastore/shahzaa/Code/prompt_work/ActionCLIP/lists/ucf_labels.csv'
+    ############ UCF-DS Val detail  #######
+    ucfds_val_list: '/cluster/datastore/shahzaa/EZ-CLIP/dataset_splits/UCF/Zero_shot/test_DS.txt' #
+    ucfds_gpt_discription: '/cluster/datastore/shahzaa/Code/prompt_work/ActionCLIP/GPT_discription/UCF_101_gpt_Class_discription_new.csv'
+    ucfds_label_list: '/cluster/datastore/shahzaa/Code/prompt_work/ActionCLIP/lists/ucf_labels.csv'
+    ############## HMDB Val detail ################
+    hmdb_val_list: '/cluster/datastore/shahzaa/Txts/HMDB_51_txt/test.txt' #
+    hmdb_gpt_discription: '/cluster/datastore/shahzaa/Code/prompt_work/ActionCLIP/GPT_discription/HMDB_gpt_Class_discription_new.csv'
+    hmdb_label_list: '/cluster/datastore/shahzaa/Code/prompt_work/ActionCLIP/lists/hmdb51_labels.csv'
+    ##################K-600####################
+    k600_val_list: '/cluster/datastore/shahzaa/Txts/test_600.txt'
+    k600_label_list: '/cluster/datastore/shahzaa/Code/Prompt_Adaptor_mix_work/ActionCLIP/lists/kinetics_600_labels.csv'
+    k600_gpt_discription: '/cluster/datastore/shahzaa/Code/Prompt_Adaptor_mix_work/ActionCLIP/GPT_discription/K_600_gpt_Class_discription_new.csv'
+    #############
+    index_bias: 1
+    input_size: 224
+    randaug:
+        N: 0 #2
+        M: 0  #9
+    random_shift: True
+network:
+    arch: ViT-B/16 #ViT-B/32 ViT-B/16  ViT-L/14
+    init: True
+    tsm: False
+    drop_out: 0.1
+    emb_dropout: 0.0 
+    type: clip_k400
+    sim_header: "Transf"  #Transf   meanP  LSTM Conv_1D Transf_cls
+    joint: False
+    describe:
+solver:
+    type: cosine
+    epochs: 150
+    start_epoch: 0
+    epoch_offset: 0
+    optim: adamw
+    lr: 1.e-4 #5.e-6
+    lr_warmup_step: 5
+    momentum: 0.9
+    weight_decay: 0.2
+    lr_decay_step: 15
+    lr_decay_factor: 0.1
+    clip_gradient: 20
+    loss_type: nll
+    evaluate: False
+    ratio: 1
+    f_ratio: 10
+logging:
+    print_freq: 10
+    eval_freq: 1
