@@ -30,7 +30,7 @@
 - **Frozen CLIP Backbone:** Maintains generalization by keeping pre-trained CLIP weights frozen.
 
 <p align="center">
-  <img src="efficiency_comparison.png" alt="Efficiency Comparison" width="800"/>
+  <img src="efficency.png" alt="Efficiency Comparison" width="800"/>
   <br>
   <em>Comparison of T2L with ActionCLIP, XCLIP, and ViFi-CLIP on tunable parameters, GFLOPs, total parameters, and throughput.</em>
 </p>
