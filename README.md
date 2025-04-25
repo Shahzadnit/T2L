@@ -97,7 +97,7 @@ Shahzad Ahmad, Sukalpa Chanda, Yogesh S. Rawat
    ```
 
 3. **Install PyTorch:**
-   Install PyTorch 2.0+ following instructions from [PyTorch's official site](https://pytorch.org/).
+   Install PyTorch following instructions from [PyTorch's official site](https://pytorch.org/).
 
 ---
 
