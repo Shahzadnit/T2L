@@ -6,7 +6,7 @@
 
 ## Overview
 
-![T2L](Figure_main.pdf)
+![T2L](T2L.jpg)
 
 
 
