@@ -6,7 +6,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange)](https://pytorch.org/)
 
 <p align="center">
-  <img src="teasure.png" alt="T2L Teaser" width="800"/>
+  <img src="images/teasure.png" alt="T2L Teaser" width="800"/>
 </p>
 
 > 📢 Official PyTorch implementation of the **TMLR 2025** accepted paper:  
@@ -30,7 +30,7 @@
 - **Frozen CLIP Backbone:** Maintains generalization by keeping pre-trained CLIP weights frozen.
 
 <p align="center">
-  <img src="efficency.png" alt="Efficiency Comparison" width="800"/>
+  <img src="images/efficency.png" alt="Efficiency Comparison" width="800"/>
   <br>
   <em>Comparison of T2L with ActionCLIP, XCLIP, and ViFi-CLIP on tunable parameters, GFLOPs, total parameters, and throughput.</em>
 </p>
@@ -39,7 +39,7 @@
 ## 👀 Qualitative Analysis: Attention Maps
 
 <p align="center">
-  <img src="attension_map.png" alt="T2L Attention Map" width="800"/>
+  <img src="images/attension_map.png" alt="T2L Attention Map" width="800"/>
 </p>
 
 Above are **temporal attention maps** for various video actions, showing how **T2L learns dynamic regions** crucial for action recognition over time. These maps demonstrate the effectiveness of our **temporal token learning** strategy.
@@ -50,7 +50,7 @@ Above are **temporal attention maps** for various video actions, showing how **T
 ## 🧠 Overview
 
 <p align="center">
-  <img src="T2L.jpg" alt="T2L Architecture" width="800"/>
+  <img src="images/T2L.jpg" alt="T2L Architecture" width="800"/>
 </p>
 
 **T2L** adapts CLIP for efficient video action recognition by introducing:
