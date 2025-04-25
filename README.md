@@ -1,37 +1,56 @@
 # T2L: Efficient Zero-Shot Action Recognition with Temporal Token Learning
+[![Paper](https://img.shields.io/badge/TMLR-2025-blue)](https://openreview.net/forum?id=WvgoxpGpuU)
 
-![Teaser Figure](T2L.jpg)
+<p align="center">
+  <img src="teasure.png" alt="T2L Teaser" width="800"/>
+</p>
 
-> **T2L** is an efficient and scalable adaptation of CLIP for zero-shot video action recognition. It introduces **Temporal Token Learning (TTL)** and a novel **Temporal Feature Diversity (TFD)** loss to capture motion without modifying the frozen CLIP backbone. With only 5.2M tunable parameters, T2L achieves state-of-the-art performance on multiple benchmarks while maintaining high throughput and low computational cost.
-
----
-
-## 🔍 Overview
-
-Recent vision-language models such as CLIP exhibit powerful generalization capabilities in zero-shot image classification. However, extending such models to videos introduces challenges related to temporal modeling and computational complexity. 
-
-**T2L** addresses these challenges by introducing a lightweight **Temporal Token Learning (TTL)** module, along with a **Temporal Feature Diversity (TFD)** loss that enhances motion representation. This design enables T2L to:
-
-- Efficiently model motion across frames with **frozen CLIP** encoders.
-- Scale to real-world video benchmarks like UCF-101, HMDB-51, and SSv2.
-- Outperform prior video-CLIP adaptations in both accuracy and throughput.
+> 📢 This is the official PyTorch implementation of our **TMLR 2025** accepted paper:  
+> **T2L: Efficient Zero-Shot Action Recognition with Temporal Token Learning**  
+> [[OpenReview]](https://openreview.net/forum?id=WvgoxpGpuU)
 
 ---
 
-![Main Architecture](Screenshot from 2025-04-25 10-13-24.png)
+## 🔥 News
+- **April 2025:** Our paper **T2L** has been accepted to **TMLR 2025**! 🎉  
+- This repo supersedes our previous work **EZ-CLIP** [[EZ-CLIP GitHub]](https://github.com/Shahzadnit/EZ-CLIP.git), which was the earlier version on arXiv.
 
 ---
 
-## 🆕 Updates
-
-- 🧠 Accepted at **TMLR 2025**
-- 📦 Pretrained models available: [Google Drive](https://drive.google.com/drive/folders/1OPt5cXSx-1u_hRXSpst94gMJ5P-c7uBS?usp=sharing)
+## 🌟 Highlights
+- ⚡️ *Only 5.2M learnable parameters* with **25x fewer** tunables than prior works.
+- 🧠 Introduces **Temporal Token Learning (TTL)** to model motion across video frames.
+- 📈 Achieves *state-of-the-art performance* in zero-shot and base-to-novel generalization.
+- 💡 Proposes **Temporal Feature Diversity Loss (TFD)** for learning temporal variations.
+- 🧊 Keeps the core CLIP backbone frozen for maximum efficiency and generalization.
 
 ---
 
-## 📦 Contents
+## 🧠 Introduction
 
-- [Prerequisites](#prerequisites)
+<p align="center">
+  <img src="T2L.jpg" alt="T2L Architecture" width="800"/>
+</p>
+
+Temporal adaptation of vision-language models like CLIP is essential for video understanding, but existing approaches often suffer from high compute cost and overfitting. We propose **T2L**, a simple yet effective extension to CLIP that introduces:
+
+- **Temporal Token Learning (TTL):** Injects temporal tokens into each transformer layer to capture cross-frame relations.
+- **Temporal Feature Diversity (TFD) Loss:** Encourages variation in temporal embeddings to highlight motion cues.
+
+Our method maintains **frozen CLIP weights** and only trains adapters and tokens—achieving strong performance in **zero-shot**, **few-shot**, and **base-to-novel generalization** benchmarks.
+
+---
+
+## 📄 Paper
+**T2L: Efficient Zero-Shot Action Recognition with Temporal Token Learning**  
+Shahzad Ahmad, Sukalpa Chanda, Yogesh S. Rawat  
+Published in Transactions on Machine Learning Research (TMLR), April 2025  
+[[OpenReview]](https://openreview.net/forum?id=WvgoxpGpuU)
+
+---
+
+## 📁 Contents
+- [Requirements](#requirements)
 - [Model Zoo](#model-zoo)
 - [Data Preparation](#data-preparation)
 - [Training](#training)
@@ -41,12 +60,13 @@ Recent vision-language models such as CLIP exhibit powerful generalization capab
 
 ---
 
-## 📋 Prerequisites
+## ⚙️ Requirements
 
-Install dependencies using:
+Use the provided `requirements.txt` to set up the environment:
 
 ```bash
 pip install -r requirements.txt
+
 
 
 
