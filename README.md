@@ -35,6 +35,16 @@
   <em>Comparison of T2L with ActionCLIP, XCLIP, and ViFi-CLIP on tunable parameters, GFLOPs, total parameters, and throughput.</em>
 </p>
 
+
+## 👀 Qualitative Analysis: Attention Maps
+
+<p align="center">
+  <img src="attension_map.png" alt="T2L Attention Map" width="1000"/>
+</p>
+
+Above are **temporal attention maps** for various video actions, showing how **T2L learns dynamic regions** crucial for action recognition over time. These maps demonstrate the effectiveness of our **temporal token learning** strategy.
+
+
 ---
 
 ## 🧠 Overview
