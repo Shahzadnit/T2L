@@ -179,12 +179,15 @@ python test.py --config configs/ucf101/UCF_zero_shot_testing.yaml
 If you find this work useful, please cite our paper:
 
 ```bibtex
-@article{ahmad2025t2l,
-  title={T2L: Efficient Zero-Shot Action Recognition with Temporal Token Learning},
-  author={Ahmad, Shahzad and Chanda, Sukalpa and Rawat, Yogesh S},
-  journal={Transactions on Machine Learning Research},
-  year={2025},
-  url={https://openreview.net/forum?id=WvgoxpGpuU}
+@article{
+ahmad2025tl,
+title={T2L: Efficient Zero-Shot Action Recognition with Temporal Token Learning},
+author={Shahzad Ahmad and Sukalpa Chanda and Yogesh S Rawat},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2025},
+url={https://openreview.net/forum?id=WvgoxpGpuU},
+note={}
 }
 ```
 
